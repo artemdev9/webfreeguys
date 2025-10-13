@@ -9,17 +9,92 @@ eleventyNavigation:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/local.css">
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
-            for (const item of faqItems) {
-                const onClick = () => {
-                    item.classList.toggle('active')
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+                for (const item of faqItems) {
+                    const onClick = () => {
+                        item.classList.toggle('active')
+                    }
+                    item.addEventListener('click', onClick)
                 }
-                item.addEventListener('click', onClick)
+            });
+        </script>
+        
+        <!-- Yandex.Metrika Goals Tracking -->
+        <script>
+        // ====== НАСТРОЙКА ======
+        var METRIKA_ID = 104622942;
+
+        // ====== 1) FORM SUBMIT ======
+        // Пометь основную форму атрибутом data-track="wfg": <form data-track="wfg" ...>
+        (function trackForms(){
+          var forms = document.querySelectorAll('form[data-track="wfg"]');
+          forms.forEach(function(form){
+            form.addEventListener('submit', function(){
+              // Для классической отправки (не AJAX) — зафиксируем попытку
+              try{ ym(METRIKA_ID, 'reachGoal', 'form_submit'); }catch(e){}
+            });
+          });
+
+          // Вызови это ПОСЛЕ успешной AJAX-отправки (см. примеры ниже)
+          window.wfgFormSuccess = function(){
+            try{ ym(METRIKA_ID, 'reachGoal', 'form_submit'); }catch(e){}
+          };
+        })();
+
+        // ====== 2) КЛИК ПО ТЕЛЕФОНУ ======
+        (function trackPhone(){
+          document.addEventListener('click', function(e){
+            var a = e.target.closest('a[href^="tel:"]');
+            if(!a) return;
+            try{ ym(METRIKA_ID, 'reachGoal', 'click_phone'); }catch(e){}
+          }, true);
+        })();
+
+        // ====== 3) КЛИК ПО TELEGRAM ======
+        (function trackTG(){
+          document.addEventListener('click', function(e){
+            var a = e.target.closest('a[href*="t.me"], a[href*="telegram.me"], a[href^="tg://"]');
+            if(!a) return;
+            try{ ym(METRIKA_ID, 'reachGoal', 'click_tg'); }catch(e){}
+          }, true);
+        })();
+
+        // ====== 4) ПРОКРУТКА 75% (однократно) ======
+        (function trackScroll75(){
+          var fired=false;
+          function check(){
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            var dh = Math.max(
+              document.body.scrollHeight, document.documentElement.scrollHeight,
+              document.body.offsetHeight, document.documentElement.offsetHeight,
+              document.body.clientHeight, document.documentElement.clientHeight
+            );
+            var wh = window.innerHeight || document.documentElement.clientHeight;
+            if(!fired && (st + wh) / dh >= 0.75){
+              fired = true;
+              try{ ym(METRIKA_ID, 'reachGoal', 'scroll_75'); }catch(e){}
+              window.removeEventListener('scroll', onScroll);
             }
-        });
-    </script>
+          }
+          function onScroll(){
+            if(onScroll._t) return;
+            onScroll._t = setTimeout(function(){ onScroll._t=null; check(); }, 200);
+          }
+          window.addEventListener('scroll', onScroll);
+          check();
+        })();
+
+        // ====== 5) VIEW_THANKS ======
+        // Если есть отдельная /thanks — в Метрике создаём цель "Посещение страницы: URL содержит /thanks".
+        // Для одностраничника можно использовать якорь #thanks и дернуть goal вручную:
+        (function trackThanksHash(){
+          if(location.pathname.indexOf('/thanks')>-1 || location.hash === '#thanks'){
+            try{ ym(METRIKA_ID, 'reachGoal', 'view_thanks'); }catch(e){}
+          }
+        })();
+        </script>
 {% endblock %}
 
 {% extends 'layouts/base.html' %}
@@ -43,23 +118,23 @@ eleventyNavigation:
             </div>
             <!--To make your own background crops of people use https://www.remove.bg/-->
             <picture class="cs-picture">
-                <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <img aria-hidden="true" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=" alt="разработчик" width="581" height="662">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-man2.png">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-man2.png">
+                <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/construction-man2.png" alt="разработчик" width="581" height="662">
             </picture>
         </div>
         <div class="cs-image-group">
             <!--Left Image-->
             <picture class="cs-background cs-background1">
-                <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <img aria-hidden="true" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=" alt="рабочее место" width="1290" height="684">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction2.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction2.jpg">
+                <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction2.jpg" alt="рабочее место" width="1290" height="684">
             </picture>
             <!--Right Image-->
             <picture class="cs-background cs-background2">
-                <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                <img aria-hidden="true" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=" alt="команда" width="630" height="684">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction1.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction1.jpg">
+                <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction1.jpg" alt="команда" width="630" height="684">
             </picture>
         </div>
     </section>
@@ -111,9 +186,9 @@ eleventyNavigation:
                             <img class="cs-arrow" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/orange-arrow-up.svg" decoding="async" alt="arrow" width="20" height="20" aria-hidden="true">
                         </span>
                         <picture class="cs-background">
-                            <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                            <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                            <img aria-hidden="true" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=" alt="рабочее место" width="630" height="684">
+                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction3.jpg">
+                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction3.jpg">
+                            <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/construction3.jpg" alt="рабочее место" width="630" height="684">
                         </picture>
                     </a>
                 </li>
@@ -144,15 +219,15 @@ eleventyNavigation:
             <div class="cs-image-group">
                 <!--Large Image-->
                 <picture class="cs-picture cs-picture-large">
-                    <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=">
-                    <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center">
-                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center" alt="Профессиональная встреча" width="334" height="380">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center" alt="Профессиональная встреча" width="334" height="380">
                 </picture>
                 <!--Small Image-->
                 <picture class="cs-picture cs-picture-small">
-                    <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1600880292203-757bb62b4baf">
-                    <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1600880292203-757bb62b4baf">
-                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1600880292203-757bb62b4baf" alt="Командная работа" width="183" height="158">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf" alt="Командная работа" width="183" height="158">
                 </picture>
             </div>
         </div>
@@ -264,10 +339,10 @@ eleventyNavigation:
             <div class="cs-wrapper">
                 <picture class="cs-picture">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517245386807-bb43f82c33c4">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517245386807-bb43f82c33c4">
-                    <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517245386807-bb43f82c33c4" alt="Команда разработчиков" width="630" height="414">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4" alt="Команда разработчиков" width="630" height="414">
                 </picture>
 
                 <p class="cs-review">
@@ -297,9 +372,9 @@ eleventyNavigation:
                 </div>
                 <!--Image-->
                 <picture class="cs-picture">
-                    <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1556761175-b413da4baf72?w=600&h=600&fit=crop&crop=center">
-                    <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1556761175-b413da4baf72">
-                    <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1556761175-b413da4baf72" alt="Совместная работа" width="630" height="630" aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1556761175-b413da4baf72?w=600&h=600&fit=crop&crop=center">
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1556761175-b413da4baf72">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1556761175-b413da4baf72" alt="Совместная работа" width="630" height="630" aria-hidden="true">
                 </picture>
             </div>
             <!-- Right Content Section-->
@@ -331,9 +406,9 @@ eleventyNavigation:
                 <!-- Image 1 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560066984-138dadb4c035">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560066984-138dadb4c035">
-                           <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560066984-138dadb4c035" alt="салон красоты" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035">
+                           <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035" alt="салон красоты" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -349,9 +424,9 @@ eleventyNavigation:
                 <!-- Image 2 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1501339847302-ac426a4a7cbb">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1501339847302-ac426a4a7cbb">
-                           <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1501339847302-ac426a4a7cbb" alt="кофейня" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb">
+                           <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb" alt="кофейня" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -367,9 +442,9 @@ eleventyNavigation:
                 <!-- Image 3 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1606811841689-23dfddceeee3">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1606811841689-23dfddceeee3">
-                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1606811841689-23dfddceeee3" alt="стоматология" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3">
+                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3" alt="стоматология" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -385,9 +460,9 @@ eleventyNavigation:
                 <!-- Image 4 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517248135467-4c7edcad34c4">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517248135467-4c7edcad34c4">
-                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1517248135467-4c7edcad34c4" alt="ресторан" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4">
+                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4" alt="ресторан" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -403,9 +478,9 @@ eleventyNavigation:
                 <!-- Image 5 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1571019613454-1cb2f99b2d8b">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1571019613454-1cb2f99b2d8b">
-                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1571019613454-1cb2f99b2d8b" alt="фитнес-клуб" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b">
+                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b" alt="фитнес-клуб" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -421,9 +496,9 @@ eleventyNavigation:
                 <!-- Image 6 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
-                           <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1486754735734-325b5831c3ad">
-                           <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1486754735734-325b5831c3ad">
-                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1486754735734-325b5831c3ad" alt="автосервис" width="346" height="346">
+                           <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad">
+                           <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad">
+                           <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad" alt="автосервис" width="346" height="346">
                        </picture>
                     <!-- Hover Box -->
                     <div class="cs-hover-box">
@@ -525,26 +600,26 @@ eleventyNavigation:
             <div class="cs-image-group">
                 <div class="cs-row">
                     <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1507003211169-0a1dd7228f2d">
-                        <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1507003211169-0a1dd7228f2d">
-                        <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1507003211169-0a1dd7228f2d" alt="Разработчик" width="305" height="410">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d" alt="Разработчик" width="305" height="410">
                     </picture>
                     <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1472099645785-5658abf4ff4e">
-                        <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1472099645785-5658abf4ff4e">
-                        <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1472099645785-5658abf4ff4e" alt="Разработчик" width="305" height="467">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e" alt="Разработчик" width="305" height="467">
                     </picture>
                 </div>
                 <div class="cs-row">
                     <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560250097-0b93528c311a">
-                        <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560250097-0b93528c311a">
-                        <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1560250097-0b93528c311a" alt="Разработчик" width="305" height="615">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a" alt="Разработчик" width="305" height="615">
                     </picture>
                     <picture class="cs-picture cs-picture4">
-                        <source media="(max-width: 600px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1519085360753-af0119f7cbe7">
-                        <source media="(min-width: 601px)" srcset="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1519085360753-af0119f7cbe7">
-                        <img loading="lazy" decoding="async" src="https://media.istockphoto.com/id/484234714/vector/example-free-grunge-retro-blue-isolated-stamp.jpg?s=612x612&w=0&k=20&c=97KgKGpcAKnn50Ubd8PawjUybzIesoXws7PdU_MJGzE=photo-1519085360753-af0119f7cbe7" alt="Разработчик" width="305" height="277">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7">
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7">
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7" alt="Разработчик" width="305" height="277">
                     </picture>
                 </div>
             </div>
@@ -670,7 +745,7 @@ eleventyNavigation:
                 </ul>
             </div>
             <!--Form-->
-            <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post">
+            <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" data-track="wfg">
                 <h3 class="cs-h3">Подать заявку</h3>
                 <label class="cs-label">
                     Имя
