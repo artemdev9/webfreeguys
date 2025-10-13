@@ -484,25 +484,6 @@
         display: block;
     }
 }
-/* Dark Mode */
-@media only screen and (max-width: 63.9375rem) {
-    body.dark-mode #cs-navigation {
-        background-color: var(--dark);
-    }
-    body.dark-mode #cs-navigation .cs-logo {
-        /* makes it white */
-        filter: grayscale(1) brightness(1000%);
-    }
-    body.dark-mode #cs-navigation .cs-ul-wrapper {
-        background-color: var(--dark);
-    }
-    body.dark-mode #cs-navigation .cs-li-link {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #cs-navigation .cs-container {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-}
 /*-- -------------------------- -->
   <---     Navigation Dropdown    -->
   <--- -------------------------- -*/
@@ -667,21 +648,6 @@
         background-color: #f7f7f7;
     }
     #cs-navigation .cs-li-link.cs-drop-link:before {
-        display: none;
-    }
-}
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-    body.dark-mode #cs-navigation .cs-drop-ul {
-        background-color: var(--dark);
-    }
-    body.dark-mode #cs-navigation .cs-li-link.cs-drop-link {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-    body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:before {
         display: none;
     }
 }
@@ -973,36 +939,6 @@
         margin: 0;
     }
 }
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-    body.dark-mode #cs-navigation {
-        background-color: var(--dark);
-    }
-    body.dark-mode #cs-navigation .cs-header,
-    body.dark-mode #cs-navigation .cs-link-content {
-        color: var(--bodyTextColorWhite);
-    }
-    body.dark-mode #cs-navigation .cs-wrapper:before {
-        background-color: #fff;
-    }
-    body.dark-mode #cs-navigation .cs-call .cs-header {
-        opacity: 0.8;
-    }
-    body.dark-mode #cs-navigation .cs-call .cs-link-content {
-        opacity: 1;
-    }
-    body.dark-mode #cs-navigation .cs-link-content {
-        opacity: 0.8;
-    }
-    body.dark-mode #cs-navigation .cs-bottom-bar {
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    body.dark-mode #cs-navigation .cs-logo,
-    body.dark-mode #cs-navigation .cs-link-icon {
-        /* turns it white */
-        filter: grayscale(1) brightness(1000%);
-    }
-}
 /*-- -------------------------- -->
   <---          Footer            -->
   <--- -------------------------- -*/
@@ -1153,11 +1089,5 @@
     #footer-1390 .cs-social {
         /* sends it to the right in the 3rd position */
         order: 3;
-    }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode #footer-1390 {
-        background-color: rgba(0, 0, 0, 0.6);
     }
 }

@@ -278,22 +278,20 @@
         display: none;
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #hero-1621 .cs-item {
-        background-color: var(--medium);
+ #hero-1621 .cs-item {
     }
-    body.dark-mode #hero-1621 .cs-icon {
+ #hero-1621 .cs-icon {
         filter: brightness(0) invert(1);
     }
-    body.dark-mode #hero-1621 .cs-h3,
-    body.dark-mode #hero-1621 .cs-item-text {
+ #hero-1621 .cs-h3,
+ #hero-1621 .cs-item-text {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #hero-1621 .cs-item-text {
+ #hero-1621 .cs-item-text {
         opacity: 0.8;
     }
-    body.dark-mode #hero-1621 .cs-background:before {
+ #hero-1621 .cs-background:before {
         opacity: 0.9;
     }
 }
@@ -578,22 +576,20 @@
         display: none;
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #hero-1621 .cs-item {
-        background-color: var(--medium);
+ #hero-1621 .cs-item {
     }
-    body.dark-mode #hero-1621 .cs-icon {
+ #hero-1621 .cs-icon {
         filter: brightness(0) invert(1);
     }
-    body.dark-mode #hero-1621 .cs-h3,
-    body.dark-mode #hero-1621 .cs-item-text {
+ #hero-1621 .cs-h3,
+ #hero-1621 .cs-item-text {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #hero-1621 .cs-item-text {
+ #hero-1621 .cs-item-text {
         opacity: 0.8;
     }
-    body.dark-mode #hero-1621 .cs-background:before {
+ #hero-1621 .cs-background:before {
         opacity: 0.9;
     }
 }
@@ -730,21 +726,19 @@
         font-size: min(1.1vw, 1em);
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #sbs-523 .cs-title,
-    body.dark-mode #sbs-523 .cs-text {
+ #sbs-523 .cs-title,
+ #sbs-523 .cs-text {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #sbs-523 .cs-text {
+ #sbs-523 .cs-text {
         opacity: 0.8;
     }
-    body.dark-mode #sbs-523 .cs-image-group:before {
+ #sbs-523 .cs-image-group:before {
         background-color: var(--secondary);
         opacity: 0.3;
     }
-    body.dark-mode #sbs-523 .cs-picture-small {
-        border-color: var(--dark);
+ #sbs-523 .cs-picture-small {
     }
 }
 /*-- -------------------------- -->
@@ -752,13 +746,13 @@
   <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #steps-1172 {
+    #how {
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
         overflow: hidden;
     }
-    #steps-1172 .cs-container {
+    #how .cs-container {
         width: 100%;
         /* changes to 1280px at desktop */
         max-width: 44rem;
@@ -769,7 +763,7 @@
         /* 48px - 64px */
         gap: clamp(3rem, 6vw, 4rem);
     }
-    #steps-1172 .cs-content {
+    #how .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
         width: 100%;
@@ -778,7 +772,7 @@
         /* centers content horizontally, set to flex-start to left align */
         align-items: center;
     }
-    #steps-1172 .cs-text {
+    #how .cs-text {
         font-size: var(--bodyFontSize);
         line-height: 1.5em;
         text-align: inherit;
@@ -787,7 +781,7 @@
         margin: 0;
         color: var(--bodyTextColor);
     }
-    #steps-1172 .cs-card-group {
+    #how .cs-card-group {
         width: 100%;
         margin: 0;
         padding: 0;
@@ -795,7 +789,7 @@
         grid-template-columns: repeat(12, 1fr);
         gap: 1.25rem;
     }
-    #steps-1172 .cs-item {
+    #how .cs-item {
         text-align: center;
         list-style: none;
         display: flex;
@@ -804,14 +798,14 @@
         grid-column: span 12;
         position: relative;
     }
-    #steps-1172 .cs-item:last-of-type:after {
+    #how .cs-item:last-of-type:after {
         display: none;
     }
-    #steps-1172 .cs-item:nth-of-type(even):after {
+    #how .cs-item:nth-of-type(even):after {
         /* scaleX -1 flips it horizontally */
         transform: rotate(-135deg) scaleX(-1);
     }
-    #steps-1172 .cs-item:after {
+    #how .cs-item:after {
         content: "";
         /* 54px - 84px */
         width: clamp(3.375rem, 6vw, 5.25rem);
@@ -826,7 +820,7 @@
         position: relative;
         transform: rotate(135deg);
     }
-    #steps-1172 .cs-picture {
+    #how .cs-picture {
         width: 5.5rem;
         height: 5.5rem;
         margin-bottom: 1.5rem;
@@ -836,19 +830,19 @@
         justify-content: center;
         align-items: center;
     }
-    #steps-1172 .cs-icon {
+    #how .cs-icon {
         width: 2.5rem;
         height: auto;
         display: block;
     }
-    #steps-1172 .cs-h3 {
+    #how .cs-h3 {
         font-size: 1.25rem;
         line-height: 1.2em;
         text-align: inherit;
         margin: 0 0 0.75rem 0;
         color: var(--headerColor);
     }
-    #steps-1172 .cs-item-text {
+    #how .cs-item-text {
         font-size: 1rem;
         line-height: 1.5em;
         text-align: inherit;
@@ -859,16 +853,16 @@
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #steps-1172 .cs-item {
+    #how .cs-item {
         grid-column: span 6;
     }
-    #steps-1172 .cs-item:nth-of-type(2):after {
+    #how .cs-item:nth-of-type(2):after {
         display: none;
     }
-    #steps-1172 .cs-item:nth-of-type(1):after {
+    #how .cs-item:nth-of-type(1):after {
         transform: rotate(135deg) scaleX(-1);
     }
-    #steps-1172 .cs-item:after {
+    #how .cs-item:after {
         margin: 0;
         position: absolute;
         top: 0;
@@ -878,34 +872,33 @@
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #steps-1172 .cs-container {
+    #how .cs-container {
         max-width: 80rem;
     }
-    #steps-1172 .cs-item {
+    #how .cs-item {
         grid-column: span 3;
     }
-    #steps-1172 .cs-item:nth-of-type(2):after {
+    #how .cs-item:nth-of-type(2):after {
         display: block;
         transform: rotate(45deg);
     }
-    #steps-1172 .cs-item:nth-of-type(3):after {
+    #how .cs-item:nth-of-type(3):after {
         display: block;
         transform: rotate(135deg) scaleX(-1);
     }
-    #steps-1172 .cs-item:after {
+    #how .cs-item:after {
         right: -3rem;
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #steps-1172 .cs-title,
-    body.dark-mode #steps-1172 .cs-text,
-    body.dark-mode #steps-1172 .cs-item-text,
-    body.dark-mode #steps-1172 .cs-h3 {
+ #how .cs-title,
+ #how .cs-text,
+ #how .cs-item-text,
+ #how .cs-h3 {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #steps-1172 .cs-text,
-    body.dark-mode #steps-1172 .cs-item-text {
+ #how .cs-text,
+ #how .cs-item-text {
         opacity: 0.8;
     }
 }
@@ -1089,21 +1082,19 @@
         align-self: flex-end;
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #why-choose-1657 {
+ #why-choose-1657 {
         background-color: rgba(0, 0, 0, 0.3);
     }
-    body.dark-mode #why-choose-1657 .cs-title,
-    body.dark-mode #why-choose-1657 .cs-li-text,
-    body.dark-mode #why-choose-1657 .cs-review {
+ #why-choose-1657 .cs-title,
+ #why-choose-1657 .cs-li-text,
+ #why-choose-1657 .cs-review {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #why-choose-1657 .cs-li-text {
+ #why-choose-1657 .cs-li-text {
         opacity: 0.8;
     }
-    body.dark-mode #why-choose-1657 .cs-wrapper:before {
-        background-color: var(--dark);
+ #why-choose-1657 .cs-wrapper:before {
     }
 }
 /*-- -------------------------- -->
@@ -1254,20 +1245,18 @@
         transform: translateY(-50%);
     }
 }
-/* Dark Mode */
 @media only screen and (min-width: 0rem) {
-    body.dark-mode #sbsr-1309 .cs-title,
-    body.dark-mode #sbsr-1309 .cs-text {
+ #sbsr-1309 .cs-title,
+ #sbsr-1309 .cs-text {
         color: var(--bodyTextColorWhite);
     }
-    body.dark-mode #sbsr-1309 .cs-link {
+ #sbsr-1309 .cs-link {
         color: var(--secondaryLight);
     }
-    body.dark-mode #sbsr-1309 .cs-text {
+ #sbsr-1309 .cs-text {
         opacity: 0.8;
     }
-    body.dark-mode #sbsr-1309 .cs-box {
-        background-color: var(--medium);
+ #sbsr-1309 .cs-box {
     }
 }
 
@@ -1277,13 +1266,13 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #contact-1388 {
+    #form {
         padding: var(--sectionPadding);
         background-color: #f7f7f7;
         position: relative;
         z-index: 1;
     }
-    #contact-1388 .cs-container {
+    #form .cs-container {
         width: 100%;
         /* changes to 1280px at tablet */
         max-width: 36.5rem;
@@ -1297,7 +1286,7 @@
         gap: clamp(2rem, 3vw, 3rem);
         position: relative;
     }
-    #contact-1388 .cs-content {
+    #form .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: left;
         width: 100%;
@@ -1307,16 +1296,16 @@
         align-items: flex-start;
     }
 
-    #contact-1388 .cs-title {
+    #form .cs-title {
         max-width: 23ch;
     }
-    #contact-1388 .cs-text {
+    #form .cs-text {
         margin-bottom: 1rem;
     }
-    #contact-1388 .cs-text:last-of-type {
+    #form .cs-text:last-of-type {
         margin-bottom: 2rem;
     }
-    #contact-1388 .cs-ul {
+    #form .cs-ul {
         text-align: left;
         width: 100%;
         margin: 0;
@@ -1328,17 +1317,17 @@
         gap: 1.5rem;
         position: relative;
     }
-    #contact-1388 .cs-li {
+    #form .cs-li {
         list-style: none;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         gap: 1.25rem;
     }
-    #contact-1388 .cs-li:hover .cs-icon-wrapper {
+    #form .cs-li:hover .cs-icon-wrapper {
         transform: scale(1.1);
     }
-    #contact-1388 .cs-header {
+    #form .cs-header {
         font-size: 1.25rem;
         font-weight: 700;
         line-height: 1.2em;
@@ -1346,7 +1335,7 @@
         color: var(--headerColor);
         display: block;
     }
-    #contact-1388 .cs-link {
+    #form .cs-link {
         font-size: 1rem;
         line-height: 1.5em;
         text-decoration: none;
@@ -1354,10 +1343,10 @@
         display: block;
         position: relative;
     }
-    #contact-1388 .cs-link:hover {
+    #form .cs-link:hover {
         text-decoration: underline;
     }
-    #contact-1388 .cs-icon-wrapper {
+    #form .cs-icon-wrapper {
         width: 3.75rem;
         height: 3.75rem;
         margin: 0;
@@ -1370,12 +1359,12 @@
         flex: none;
         transition: transform 0.3s;
     }
-    #contact-1388 .cs-icon {
+    #form .cs-icon {
         width: 1.5rem;
         height: auto;
         display: block;
     }
-    #contact-1388 .cs-form {
+    #form .cs-form {
         width: 100%;
         max-width: 39.375rem;
         /* 24px - 48px top and bottom */
@@ -1391,7 +1380,7 @@
         align-items: center;
         gap: 0.75rem;
     }
-    #contact-1388 .cs-h3 {
+    #form .cs-h3 {
         /* 20px - 39px */
         font-size: clamp(1.25rem, 3vw, 2.4375rem);
         line-height: 1.2em;
@@ -1399,7 +1388,7 @@
         margin: 0 0 0.25rem 0;
         color: var(--headerColor);
     }
-    #contact-1388 .cs-label {
+    #form .cs-label {
         /* 14px - 16px */
         font-size: clamp(0.875rem, 1.5vw, 1rem);
         width: 100%;
@@ -1410,7 +1399,7 @@
         align-items: flex-start;
         gap: 0.25rem;
     }
-    #contact-1388 .cs-input {
+    #form .cs-input {
         font-size: 1rem;
         width: 100%;
         height: 3.5rem;
@@ -1423,17 +1412,17 @@
         /* prevents padding from adding to height and width */
         box-sizing: border-box;
     }
-    #contact-1388 .cs-input::placeholder {
+    #form .cs-input::placeholder {
         color: #7d799c;
         opacity: 0.6;
     }
-    #contact-1388 .cs-textarea {
+    #form .cs-textarea {
         min-height: 7.5rem;
         padding-top: 1.5rem;
         margin-bottom: 0.75rem;
         font-family: inherit;
     }
-    #contact-1388 .cs-button-solid {
+    #form .cs-button-solid {
         font-size: 1rem;
         line-height: 3.5rem;
         text-decoration: none;
@@ -1449,7 +1438,7 @@
         z-index: 1;
         transition: color 0.3s;
     }
-    #contact-1388 .cs-button-solid:before {
+    #form .cs-button-solid:before {
         content: "";
         position: absolute;
         display: block;
@@ -1462,51 +1451,51 @@
         z-index: -1;
         transition: width 0.3s;
     }
-    #contact-1388 .cs-button-solid:hover {
+    #form .cs-button-solid:hover {
         color: var(--primary);
     }
-    #contact-1388 .cs-button-solid:hover:before {
+    #form .cs-button-solid:hover:before {
         width: 100%;
     }
-    #contact-1388 .cs-submit {
+    #form .cs-submit {
         width: 100%;
         min-width: 12.5rem;
         border: none;
     }
-    #contact-1388 .cs-submit:hover {
+    #form .cs-submit:hover {
         color: #fff;
         cursor: pointer;
     }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #contact-1388 .cs-container {
+    #form .cs-container {
         max-width: 80rem;
         flex-direction: row;
         justify-content: space-between;
     }
-    #contact-1388 .cs-content {
+    #form .cs-content {
         width: 47%;
         /* prevents flexbox from squishing it */
         flex: none;
     }
-    #contact-1388 .cs-submit {
+    #form .cs-submit {
         width: auto;
     }
 }
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-    #contact-1388 .cs-form {
+    #form .cs-form {
         width: 46%;
         max-width: 36.125rem;
     }
-    #contact-1388 .cs-submit {
+    #form .cs-submit {
         width: auto;
     }
 }
 /* Large Desktop - 1500px */
 @media only screen and (min-width: 93.75rem) {
-    #contact-1388 .cs-graphic {
+    #form .cs-graphic {
         display: block;
     }
 }
@@ -1517,13 +1506,13 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #gallery-43 {
+    #examples {
         padding: var(--sectionPadding);
         position: relative;
         /* Prevents overflow from the image going off screen */
         overflow: hidden;
     }
-    #gallery-43 .cs-container {
+    #examples .cs-container {
         width: 100%;
         max-width: 69rem;
         margin: auto;
@@ -1533,7 +1522,7 @@
         /* 48px - 64px */
         gap: clamp(3rem, 6vw, 4rem);
     }
-    #gallery-43 .cs-content {
+    #examples .cs-content {
         /* set text align to left if content needs to be left aligned */
         text-align: center;
         width: 100%;
@@ -1543,7 +1532,7 @@
         align-items: center;
     }
 
-    #gallery-43 .cs-image-group {
+    #examples .cs-image-group {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -1551,7 +1540,7 @@
         /* 16px - 20px */
         gap: clamp(1rem, 1.5vw, 1.25rem);
     }
-    #gallery-43 .cs-item {
+    #examples .cs-item {
         width: 100%;
         height: 100%;
         aspect-ratio: 1;
@@ -1559,31 +1548,31 @@
         position: relative;
         display: block;
     }
-    #gallery-43 .cs-item:hover .cs-hover-box {
+    #examples .cs-item:hover .cs-hover-box {
         opacity: 1;
     }
-    #gallery-43 .cs-item:hover .cs-icon {
+    #examples .cs-item:hover .cs-icon {
         /* return to original position */
         transform: rotateY(0);
     }
-    #gallery-43 .cs-item:hover .cs-h3 {
+    #examples .cs-item:hover .cs-h3 {
         opacity: 1;
         /* Return to original position */
         transform: translateY(0);
     }
-    #gallery-43 .cs-item:hover .cs-hover-box-text {
+    #examples .cs-item:hover .cs-hover-box-text {
         opacity: 1;
         /* Return to original position */
         transform: translateY(0);
     }
-    #gallery-43 .cs-picture {
+    #examples .cs-picture {
         margin: auto;
         width: 100%;
         height: 100%;
         display: block;
         position: relative;
     }
-    #gallery-43 .cs-picture img {
+    #examples .cs-picture img {
         position: absolute;
         top: 0;
         left: 0;
@@ -1591,7 +1580,7 @@
         width: 100%;
         object-fit: cover;
     }
-    #gallery-43 .cs-hover-box {
+    #examples .cs-hover-box {
         text-align: center;
         width: 100%;
         height: 100%;
@@ -1614,7 +1603,7 @@
         pointer-events: none;
         transition: opacity 0.3s;
     }
-    #gallery-43 .cs-icon {
+    #examples .cs-icon {
         /* 50px - 60px */
         width: clamp(3.125rem, 5vw, 3.75rem);
         height: clamp(3.125rem, 5vw, 3.75rem);
@@ -1632,11 +1621,11 @@
         flex: none;
         transition: transform 0.5s;
     }
-    #gallery-43 .cs-icon img {
+    #examples .cs-icon img {
         width: 1.25rem;
         height: 1.25rem;
     }
-    #gallery-43 .cs-h3 {
+    #examples .cs-h3 {
         /* 20px - 25px */
         font-size: clamp(1.25rem, 2vw, 1.5625rem);
         line-height: 1.2em;
@@ -1653,7 +1642,7 @@
             transform 0.3s ease-out;
         transition-delay: 0.1s;
     }
-    #gallery-43 .cs-hover-box-text {
+    #examples .cs-hover-box-text {
         /* 13px - 16px */
         font-size: clamp(0.8125rem, 1vw, 1rem);
         line-height: 1.5em;
@@ -1671,18 +1660,18 @@
 }
 /* In Between - 600px */
 @media only screen and (min-width: 37.5rem) {
-    #gallery-43 .cs-image-group {
+    #examples .cs-image-group {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
     }
-    #gallery-43 .cs-item {
+    #examples .cs-item {
         grid-column: span 6;
     }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #gallery-43 .cs-item {
+    #examples .cs-item {
         grid-column: span 4;
     }
 }
@@ -1903,10 +1892,10 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #sbsr-1575 {
+  #faq {
     padding: var(--sectionPadding);
   }
-  #sbsr-1575 .cs-container {
+  #faq .cs-container {
     width: 100%;
     /* changes to 1280px at small desktop */
     max-width: 36.5rem;
@@ -1917,19 +1906,19 @@
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #sbsr-1575 .cs-content {
+  #faq .cs-content {
     text-align: center;
     max-width: 39.375rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  #sbsr-1575 .cs-title {
+  #faq .cs-title {
     /* 20 characters wide including spaces */
     max-width: 20ch;
     margin: 0 0 2rem 0;
   }
-  #sbsr-1575 .cs-faq-group {
+  #faq .cs-faq-group {
     padding: 0;
     margin: 0;
     display: flex;
@@ -1938,7 +1927,7 @@
     flex-direction: column;
     gap: 0.75rem;
   }
-  #sbsr-1575 .cs-faq-item {
+  #faq .cs-faq-item {
     text-align: left;
     list-style: none;
     width: 100%;
@@ -1948,25 +1937,25 @@
     box-sizing: border-box;
     transition: border-bottom 0.3s;
   }
-  #sbsr-1575 .cs-faq-item.active {
+  #faq .cs-faq-item.active {
     border-color: var(--primaryLight);
   }
-  #sbsr-1575 .cs-faq-item.active .cs-button {
+  #faq .cs-faq-item.active .cs-button {
     color: var(--primary);
   }
-  #sbsr-1575 .cs-faq-item.active .cs-button .cs-indicator:before {
+  #faq .cs-faq-item.active .cs-button .cs-indicator:before {
     transform: translate(-50%, -50%) rotate(360deg);
   }
-  #sbsr-1575 .cs-faq-item.active .cs-button .cs-indicator:after {
+  #faq .cs-faq-item.active .cs-button .cs-indicator:after {
     transform: translate(-50%, -50%) rotate(0deg);
   }
-  #sbsr-1575 .cs-faq-item.active .cs-item-p {
+  #faq .cs-faq-item.active .cs-item-p {
     height: auto;
     padding-top: 1rem;
     opacity: 1;
     transform: scaleY(1);
   }
-  #sbsr-1575 .cs-button {
+  #faq .cs-button {
     /* 16px - 20px */
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.2em;
@@ -1983,16 +1972,16 @@
     position: relative;
     transition: background-color 0.3s, color 0.3s;
   }
-  #sbsr-1575 .cs-button:hover {
+  #faq .cs-button:hover {
     cursor: pointer;
   }
-  #sbsr-1575 .cs-button .cs-indicator {
+  #faq .cs-button .cs-indicator {
     width: 1.5rem;
     height: 1.5rem;
     position: relative;
     z-index: 1;
   }
-  #sbsr-1575 .cs-button .cs-indicator:before {
+  #faq .cs-button .cs-indicator:before {
     /* left line */
     content: '';
     width: 1rem;
@@ -2007,7 +1996,7 @@
     transform: translate(-50%, -50%);
     transition: transform .5s;
   }
-  #sbsr-1575 .cs-button .cs-indicator:after {
+  #faq .cs-button .cs-indicator:after {
     /* right line */
     content: '';
     width: 1rem;
@@ -2022,11 +2011,11 @@
     transform: translate(-50%, -50%) rotate(90deg);
     transition: transform .5s;
   }
-  #sbsr-1575 .cs-button-text {
+  #faq .cs-button-text {
     width: 90%;
     display: block;
   }
-  #sbsr-1575 .cs-item-p {
+  #faq .cs-item-p {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     line-height: 1.5em;
@@ -2043,7 +2032,7 @@
     transform-origin: top;
     transition: opacity 0.3s, transform 0.3s, padding-bottom 0.3s;
   }
-  #sbsr-1575 .cs-image-group {
+  #faq .cs-image-group {
     /* everything inside the image group is in ems so the font size will scale them down.  Font size minimum is tied to view width size, and grows until it reaches 75% of the value on em */
     font-size: min(2.3vw, .89em);
     width: 39.375em;
@@ -2053,13 +2042,13 @@
     position: relative;
     z-index: 1;
   }
-  #sbsr-1575 .cs-picture {
+  #faq .cs-picture {
     overflow: hidden;
     display: block;
     position: relative;
     z-index: 1;
   }
-  #sbsr-1575 .cs-picture img {
+  #faq .cs-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -2067,7 +2056,7 @@
     top: 0;
     left: 0;
   }
-  #sbsr-1575 .cs-row {
+  #faq .cs-row {
     width: 100%;
     height: auto;
     display: flex;
@@ -2075,37 +2064,37 @@
     align-items: center;
     gap: 1.25em;
   }
-  #sbsr-1575 .cs-picture1 {
+  #faq .cs-picture1 {
     width: 19.0625em;
     height: 40.594059%;
     margin-top: 7.125em;
   }
-  #sbsr-1575 .cs-picture2 {
+  #faq .cs-picture2 {
     width: 19.0625em;
     height: 60.891089%;
   }
-  #sbsr-1575 .cs-picture3 {
+  #faq .cs-picture3 {
     width: 19.0625em;
     height: 60%;
   }
-  #sbsr-1575 .cs-picture4 {
+  #faq .cs-picture4 {
     width: 19.0625em;
     height: 27.425743%;
   }
 }
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-  #sbsr-1575 .cs-container {
+  #faq .cs-container {
     max-width: 80rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
   }
-  #sbsr-1575 .cs-content {
+  #faq .cs-content {
     text-align: left;
     align-items: flex-start;
   }
-  #sbsr-1575 .cs-image-group {
+  #faq .cs-image-group {
     font-size: min(1.2vw, 1em);
     height: auto;
     /* -210px to -384px */
