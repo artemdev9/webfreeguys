@@ -2204,3 +2204,29 @@
     }
 }
 
+/*-- -------------------------- -->
+<---      Why Choose Us         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-1657 .cs-number {
+        min-width: 12rem;
+        display: inline-block;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-choose-1657 .cs-number {
+        min-width: 14rem;
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #why-choose-1657 .cs-number {
+        min-width: 16rem;
+    }
+}
+
