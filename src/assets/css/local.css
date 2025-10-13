@@ -2116,3 +2116,91 @@
   }
 }
 
+/*-- -------------------------- -->
+<---      Target Audience       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #target-audience {
+        padding: var(--sectionPadding);
+    }
+    #target-audience .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    #target-audience .cs-content {
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #target-audience .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+    }
+    #target-audience .cs-item {
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem;
+        background-color: #f7f7f7;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-column: span 12;
+        grid-row: span 1;
+        position: relative;
+        z-index: 1;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #target-audience .cs-item:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
+    }
+    #target-audience .cs-icon {
+        width: 3rem;
+        height: auto;
+        margin: 0 0 1rem 0;
+    }
+    #target-audience .cs-h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        text-align: center;
+        margin: 0;
+        color: var(--headerColor);
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #target-audience .cs-item {
+        grid-column: span 6;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #target-audience .cs-item {
+        grid-column: span 4;
+    }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #target-audience .cs-item {
+        grid-column: span 2.4;
+    }
+}
+
