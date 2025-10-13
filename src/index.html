@@ -1,5 +1,5 @@
 ---
-title: "Бесплатный сайт для бизнеса"
+title: "WebFreeGuys - Бесплатный сайт для бизнеса"
 description: "Получите профессиональный сайт бесплатно и запустите свой бизнес. 30,000+ сайтов создано. Рейтинг #1 среди 48,000+ веб-агентств."
 permalink: '/'
 eleventyNavigation:
@@ -21,80 +21,6 @@ eleventyNavigation:
             });
         </script>
         
-        <!-- Yandex.Metrika Goals Tracking -->
-        <script>
-        // ====== НАСТРОЙКА ======
-        var METRIKA_ID = 104622942;
-
-        // ====== 1) FORM SUBMIT ======
-        // Пометь основную форму атрибутом data-track="wfg": <form data-track="wfg" ...>
-        (function trackForms(){
-          var forms = document.querySelectorAll('form[data-track="wfg"]');
-          forms.forEach(function(form){
-            form.addEventListener('submit', function(){
-              // Для классической отправки (не AJAX) — зафиксируем попытку
-              try{ ym(METRIKA_ID, 'reachGoal', 'form_submit'); }catch(e){}
-            });
-          });
-
-          // Вызови это ПОСЛЕ успешной AJAX-отправки (см. примеры ниже)
-          window.wfgFormSuccess = function(){
-            try{ ym(METRIKA_ID, 'reachGoal', 'form_submit'); }catch(e){}
-          };
-        })();
-
-        // ====== 2) КЛИК ПО ТЕЛЕФОНУ ======
-        (function trackPhone(){
-          document.addEventListener('click', function(e){
-            var a = e.target.closest('a[href^="tel:"]');
-            if(!a) return;
-            try{ ym(METRIKA_ID, 'reachGoal', 'click_phone'); }catch(e){}
-          }, true);
-        })();
-
-        // ====== 3) КЛИК ПО TELEGRAM ======
-        (function trackTG(){
-          document.addEventListener('click', function(e){
-            var a = e.target.closest('a[href*="t.me"], a[href*="telegram.me"], a[href^="tg://"]');
-            if(!a) return;
-            try{ ym(METRIKA_ID, 'reachGoal', 'click_tg'); }catch(e){}
-          }, true);
-        })();
-
-        // ====== 4) ПРОКРУТКА 75% (однократно) ======
-        (function trackScroll75(){
-          var fired=false;
-          function check(){
-            var st = window.pageYOffset || document.documentElement.scrollTop;
-            var dh = Math.max(
-              document.body.scrollHeight, document.documentElement.scrollHeight,
-              document.body.offsetHeight, document.documentElement.offsetHeight,
-              document.body.clientHeight, document.documentElement.clientHeight
-            );
-            var wh = window.innerHeight || document.documentElement.clientHeight;
-            if(!fired && (st + wh) / dh >= 0.75){
-              fired = true;
-              try{ ym(METRIKA_ID, 'reachGoal', 'scroll_75'); }catch(e){}
-              window.removeEventListener('scroll', onScroll);
-            }
-          }
-          function onScroll(){
-            if(onScroll._t) return;
-            onScroll._t = setTimeout(function(){ onScroll._t=null; check(); }, 200);
-          }
-          window.addEventListener('scroll', onScroll);
-          check();
-        })();
-
-        // ====== 5) VIEW_THANKS ======
-        // Если есть отдельная /thanks — в Метрике создаём цель "Посещение страницы: URL содержит /thanks".
-        // Для одностраничника можно использовать якорь #thanks и дернуть goal вручную:
-        (function trackThanksHash(){
-          if(location.pathname.indexOf('/thanks')>-1 || location.hash === '#thanks'){
-            try{ ym(METRIKA_ID, 'reachGoal', 'view_thanks'); }catch(e){}
-          }
-        })();
-        </script>
 {% endblock %}
 
 {% extends 'layouts/base.html' %}
@@ -660,14 +586,14 @@ eleventyNavigation:
         <div class="cs-container">
             <div class="cs-content">
                 <span class="cs-topper">Призыв к действию</span>
-                <h2 class="cs-title">Готовы сделать первый шаг к современному онлайн-присутствию?</h2>
+                <h2 class="cs-title">Готовы сделать первый шаг к современному веб-сайту?</h2>
                 <p class="cs-text">
                     Заполните короткую заявку — и уже через несколько дней ваш бизнес получит профессиональный сайт.
                 </p>
                 <ul class="cs-ul">
                     <li class="cs-li">
                         <picture class="cs-icon-wrapper">
-                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-76.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
+                            <img aria-hidden="true" src="/assets/images/phone.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
                         </picture>
                         <div class="cs-flex-group">
                             <span class="cs-header">Телефон</span>
@@ -676,26 +602,26 @@ eleventyNavigation:
                     </li>
                     <li class="cs-li">
                         <picture class="cs-icon-wrapper">
-                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-76.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
+                            <img aria-hidden="true" src="/assets/images/telegram.svg" alt="telegram icon" class="cs-icon" width="40" height="40" decoding="async">
                         </picture>
                         <div class="cs-flex-group">
-                            <span class="cs-header">Email</span>
-                            <a href="mailto:hello@freewebsiteguys.ru" class="cs-link">hello@freewebsiteguys.ru</a>
+                            <span class="cs-header">Telegram</span>
+                            <a href="https://t.me/webfreeguys" class="cs-link" target="_blank">@webfreeguys</a>
                         </div>
                     </li>
                     <li class="cs-li">
                         <picture class="cs-icon-wrapper">
-                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-76.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
+                            <img aria-hidden="true" src="/assets/images/whatsapp.svg" alt="whatsapp icon" class="cs-icon" width="40" height="40" decoding="async">
                         </picture>
                         <div class="cs-flex-group">
-                            <span class="cs-header">Адрес</span>
-                            <a href="" class="cs-link">Москва, Россия</a>
+                            <span class="cs-header">WhatsApp</span>
+                            <a href="https://wa.me/79991234567" class="cs-link" target="_blank">+7 (999) 123-45-67</a>
                         </div>
                     </li>
                 </ul>
             </div>
             <!--Form-->
-            <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post" data-track="wfg">
+            <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post">
                 <h3 class="cs-h3">Подать заявку</h3>
                 <label class="cs-label">
                     Имя
