@@ -282,7 +282,6 @@
  #hero-1621 .cs-item {
     }
  #hero-1621 .cs-icon {
-        filter: brightness(0) invert(1);
     }
  #hero-1621 .cs-h3,
  #hero-1621 .cs-item-text {
@@ -580,7 +579,6 @@
  #hero-1621 .cs-item {
     }
  #hero-1621 .cs-icon {
-        filter: brightness(0) invert(1);
     }
  #hero-1621 .cs-h3,
  #hero-1621 .cs-item-text {
@@ -1083,9 +1081,6 @@
     }
 }
 @media only screen and (min-width: 0rem) {
- #why-choose-1657 {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
  #why-choose-1657 .cs-title,
  #why-choose-1657 .cs-li-text,
  #why-choose-1657 .cs-review {
