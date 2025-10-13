@@ -4,8 +4,8 @@
 @media only screen and (min-width: 0rem) {
     :root {
         /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-        --primary: #ffba19;
-        --primaryLight: #ffd675;
+        --primary: #0fb7d8;
+        --primaryLight: #4dd1e8;
         --secondary: #001f3f;
         --secondaryLight: #001f3f;
         --headerColor: #1a1a1a;
@@ -64,16 +64,14 @@
     .cs-button-solid {
         font-size: 1rem;
         font-weight: 700;
-        /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-        text-align: center;
+        line-height: 3.5rem;
         text-decoration: none;
-        min-width: 9.375rem;
+        font-weight: 700;
+        overflow: hidden;
         margin: 0;
-        /* prevents padding from adding to the width */
-        box-sizing: border-box;
-        padding: 0 1.5rem;
-        color: #1a1a1a;
+        color: #fff;
+        padding: 0 3rem;
+        border-radius: 1.875rem;
         background-color: var(--primary);
         display: inline-block;
         position: relative;
@@ -82,11 +80,12 @@
     }
     .cs-button-solid:before {
         content: "";
-        width: 0%;
-        height: 100%;
-        background: #000;
-        opacity: 1;
         position: absolute;
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: #1a1a1a;
+        opacity: 1;
         top: 0;
         left: 0;
         z-index: -1;
@@ -379,16 +378,14 @@
     #cs-navigation .cs-button-solid {
         font-size: 1rem;
         font-weight: 700;
-        /* 46px - 56px */
-        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-        text-align: center;
+        line-height: 3.5rem;
         text-decoration: none;
-        min-width: 9.375rem;
+        font-weight: 700;
+        overflow: hidden;
         margin: 0;
-        /* prevents padding from adding to the width */
-        box-sizing: border-box;
-        padding: 0 1.5rem;
-        color: #1a1a1a;
+        color: #fff;
+        padding: 0 3rem;
+        border-radius: 1.875rem;
         background-color: var(--primary);
         display: inline-block;
         position: relative;
@@ -397,11 +394,12 @@
     }
     #cs-navigation .cs-button-solid:before {
         content: "";
-        width: 0%;
-        height: 100%;
-        background: #000;
-        opacity: 1;
         position: absolute;
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: #1a1a1a;
+        opacity: 1;
         top: 0;
         left: 0;
         z-index: -1;
@@ -808,6 +806,7 @@
         padding: 0 3rem;
         color: #1a1a1a;
         background-color: var(--primary);
+        border-radius: 1.875rem;
         display: inline-block;
         position: relative;
         z-index: 1;
@@ -815,11 +814,12 @@
     }
     #cs-navigation .cs-button-solid:before {
         content: "";
-        width: 0%;
-        height: 100%;
-        background: #000;
-        opacity: 1;
         position: absolute;
+        display: block;
+        height: 100%;
+        width: 0%;
+        background: #1a1a1a;
+        opacity: 1;
         top: 0;
         left: 0;
         z-index: -1;
