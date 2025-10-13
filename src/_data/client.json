@@ -1,0 +1,21 @@
+{
+    "name": "The Free Website Guys",
+    "email": "hello@freewebsiteguys.ru",
+    "phoneForTel": "+7-999-123-45-67",
+    "phoneFormatted": "+7 (999) 123-45-67",
+    "address": {
+        "lineOne": "Москва",
+        "lineTwo": "Россия",
+        "city": "Москва",
+        "state": "МО",
+        "zip": "101000",
+        "mapLink": "https://goo.gl/maps/moscow"
+    },
+    "social": {
+        "facebook": "https://www.facebook.com/freewebsiteguys",
+        "twitter": "https://twitter.com/freewebsiteguys",
+        "instagram": "https://www.instagram.com/freewebsiteguys",
+        "youtube": "https://www.youtube.com/freewebsiteguys"
+    },
+    "domain": "https://www.freewebsiteguys.ru"
+}
