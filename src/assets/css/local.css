@@ -4,10 +4,10 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #hero-1621 {
-        /* 296px - 364px - top leaving extra space for the navigation */
-        /* 60px - 100px bottom */
-        padding: clamp(18.5rem, 25.95vw, 22.75rem) 1rem
-            clamp(3.75rem, 7.82vw, 6.25rem);
+        /* 120px - 200px - top leaving extra space for the navigation */
+        /* 40px - 80px bottom */
+        padding: clamp(7.5rem, 12vw, 12.5rem) 1rem
+            clamp(2.5rem, 4vw, 5rem);
         position: relative;
         z-index: 1;
         /* prevents the topper line from causing an overflow */
@@ -21,8 +21,8 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        /* 140px - 180px */
-        gap: clamp(8.75rem, 13vw, 11.25rem);
+        /* 60px - 100px */
+        gap: clamp(3.75rem, 6vw, 6.25rem);
     }
     #hero-1621 .cs-content {
         --cornerWidth: 8.75rem;
@@ -31,9 +31,9 @@
         max-width: 53.125rem;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
-        /* 112px - 144px top & bottom */
+        /* 60px - 80px top & bottom */
         /* 16px - 48px left & right */
-        padding: clamp(7rem, 8vw, 9rem) clamp(1rem, 5vw, 3rem);
+        padding: clamp(3.75rem, 5vw, 5rem) clamp(1rem, 5vw, 3rem);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -321,8 +321,8 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        /* 140px - 180px */
-        gap: clamp(8.75rem, 13vw, 11.25rem);
+        /* 60px - 100px */
+        gap: clamp(3.75rem, 6vw, 6.25rem);
     }
     #hero-1621 .cs-content {
         --cornerWidth: 8.75rem;
@@ -331,9 +331,9 @@
         max-width: 53.125rem;
         /* prevents padding from affecting height and width */
         box-sizing: border-box;
-        /* 112px - 144px top & bottom */
+        /* 60px - 80px top & bottom */
         /* 16px - 48px left & right */
-        padding: clamp(7rem, 8vw, 9rem) clamp(1rem, 5vw, 3rem);
+        padding: clamp(3.75rem, 5vw, 5rem) clamp(1rem, 5vw, 3rem);
         display: flex;
         flex-direction: column;
         align-items: center;
