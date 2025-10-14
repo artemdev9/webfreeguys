@@ -95,11 +95,13 @@
         {% include "components/cookie-banner.html" %}
         
         <!-- Vercel Analytics -->
-        <script defer src="https://unpkg.com/@vercel/analytics@latest/dist/analytics.js"></script>
+        <script defer src="/assets/js/vercel-analytics.js"></script>
         <script>
             // Debug: Check if Vercel Analytics is loaded
             window.addEventListener('load', function() {
                 console.log('Vercel Analytics script loaded:', typeof window.va !== 'undefined');
+                console.log('Vercel Analytics mode:', window.vam || 'not set');
+                console.log('Current hostname:', window.location.hostname);
             });
         </script>
     </body>
