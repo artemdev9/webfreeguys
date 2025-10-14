@@ -2214,3 +2214,145 @@
     }
 }
 
+/* ============================================ */
+/*              Thank You Page Styles          */
+/* ============================================ */
+
+.cs-success-message {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cs-success-message .cs-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cs-success-message .cs-li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cs-success-message .cs-li:last-child {
+    margin-bottom: 0;
+}
+
+.cs-success-message .cs-number {
+    background-color: var(--primary);
+    color: var(--bodyTextColorWhite);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.cs-success-message .cs-li-text {
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#contact-info {
+    padding: var(--sectionPadding);
+    background-color: var(--secondary);
+}
+
+#contact-info .cs-card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#contact-info .cs-item {
+    background-color: var(--bodyTextColorWhite);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#contact-info .cs-item:hover {
+    transform: translateY(-5px);
+}
+
+#contact-info .cs-icon-wrapper {
+    margin-bottom: 1rem;
+}
+
+#contact-info .cs-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+#contact-info .cs-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--headerColor);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+#contact-info .cs-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#contact-info .cs-link:hover {
+    text-decoration: underline;
+}
+
+#contact-info .cs-item-text {
+    color: var(--bodyTextColor);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    .cs-success-message {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    #contact-info .cs-card-group {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    #contact-info .cs-item {
+        padding: 1.5rem;
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    .cs-success-message {
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+    
+    #contact-info .cs-card-group {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
