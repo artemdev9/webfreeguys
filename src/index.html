@@ -72,16 +72,8 @@ eleventyNavigation:
             </ul>
         </div>
 
-        <!-- Background Image -->
-        <picture class="cs-background">
-            <source media="(max-width: 600px)"
-            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg">
-            <source media="(min-width: 601px)"
-            srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg">
-            <img loading="lazy" decoding="async"
-            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg" alt="Профессиональная команда разработчиков" width="1920"
-            height="1200" aria-hidden="true">
-        </picture>
+        <!-- Gradient Animation Background -->
+        <div class="gradient"></div>
     </section>
 
     <!-- ============================================ -->
@@ -109,16 +101,11 @@ eleventyNavigation:
             <div class="cs-image-group">
                 <!--Large Image-->
                 <picture class="cs-picture cs-picture-large">
-                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg">
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center">
-                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1552664730-d307ca884978?w=500&h=600&fit=crop&crop=center" alt="Профессиональная встреча" width="334" height="380">
+                    <source media="(max-width: 600px)" srcset="/assets/images/website-map.svg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/website-map.svg">
+                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/website-map.svg" alt="Карта сайта" width="334" height="380">
                 </picture>
-                <!--Small Image-->
-                <picture class="cs-picture cs-picture-small">
-                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf">
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf">
-                    <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1600880292203-757bb62b4baf" alt="Командная работа" width="183" height="158">
-                </picture>
+               
             </div>
         </div>
     </section>
@@ -214,10 +201,10 @@ eleventyNavigation:
             <div class="cs-wrapper">
                 <picture class="cs-picture">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4">
+                    <source media="(max-width: 600px)" srcset="/assets/images/developer-team.svg">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517245386807-bb43f82c33c4" alt="Команда разработчиков" width="630" height="414">
+                    <source media="(min-width: 601px)" srcset="/assets/images/developer-team.svg">
+                    <img loading="lazy" decoding="async" src="/assets/images/developer-team.svg" alt="Команда разработчиков" width="630" height="414">
                 </picture>
 
                 <p class="cs-review">
@@ -235,7 +222,7 @@ eleventyNavigation:
 
     <!-- ============================================ -->
     <!--              Target Audience                 -->
-    <!-- ============================================ -->
+    <!-- ==================================b========== -->
 
     <section id="target-audience">
         <div class="cs-container">
@@ -302,7 +289,7 @@ eleventyNavigation:
     <!-- ============================================ -->
     <!--                   Gallery                    -->
     <!-- ============================================ -->
-
+<!-- 
     <section id="examples">
         <div class="cs-container">
             <div class="cs-content">
@@ -313,14 +300,12 @@ eleventyNavigation:
                 </p>
             </div>
             <div class="cs-image-group">
-                <!-- Image 1 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035">
                            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560066984-138dadb4c035" alt="салон красоты" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="салон красоты" width="20" height="20" aria-hidden="true">
@@ -331,14 +316,12 @@ eleventyNavigation:
                         </p>
                     </div>
                 </a>
-                <!-- Image 2 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb">
                            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1501339847302-ac426a4a7cbb" alt="кофейня" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="кофейня" width="20" height="20" aria-hidden="true">
@@ -349,14 +332,12 @@ eleventyNavigation:
                         </p>
                     </div>
                 </a>
-                <!-- Image 3 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3">
                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1606811841689-23dfddceeee3" alt="стоматология" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="стоматология" width="20" height="20" aria-hidden="true">
@@ -367,14 +348,12 @@ eleventyNavigation:
                         </p>
                     </div>
                 </a>
-                <!-- Image 4 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4">
                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1517248135467-4c7edcad34c4" alt="ресторан" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="ресторан" width="20" height="20" aria-hidden="true">
@@ -385,14 +364,12 @@ eleventyNavigation:
                         </p>
                     </div>
                 </a>
-                <!-- Image 5 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b">
                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1571019613454-1cb2f99b2d8b" alt="фитнес-клуб" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="фитнес-клуб" width="20" height="20" aria-hidden="true">
@@ -403,14 +380,12 @@ eleventyNavigation:
                         </p>
                     </div>
                 </a>
-                <!-- Image 6 -->
                 <a class="cs-item" href="">
                        <picture class="cs-picture">
                            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad">
                            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad">
                            <img aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1486754735734-325b5831c3ad" alt="автосервис" width="346" height="346">
                        </picture>
-                    <!-- Hover Box -->
                     <div class="cs-hover-box">
                         <picture class="cs-icon">
                             <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Gallery/orange-arrow-right.svg" alt="автосервис" width="20" height="20" aria-hidden="true">
@@ -423,7 +398,7 @@ eleventyNavigation:
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ============================================ -->
     <!--                   Reviews                    -->
@@ -482,14 +457,15 @@ eleventyNavigation:
                     <span class="cs-desc">Поддержка клиентов</span>
                 </li>
             </ul>
-        </div>
         <picture class="cs-background">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/waves-side.svg">
+            <source media="(max-width: 600px)" srcset="/assets/images/work.svg">
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/images/waves-side.svg">
-            <img loading="lazy" decoding="async" src="/assets/images/waves-side.svg" alt="wave" width="1280" height="568">
+            <source media="(min-width: 601px)" srcset="/assets/images/work.svg">
+            <img loading="lazy" decoding="async" src="/assets/images/work.svg" alt="work illustration" width="800" height="685">
         </picture>
+        </div>
+        
     </section>
 
     <!-- ============================================ -->
@@ -500,30 +476,11 @@ eleventyNavigation:
         <div class="cs-container">
             <!-- Left Section -->
             <div class="cs-image-group">
-                <div class="cs-row">
-                    <picture class="cs-picture cs-picture1">
-                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d">
-                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1507003211169-0a1dd7228f2d" alt="Разработчик" width="305" height="410">
-                    </picture>
-                    <picture class="cs-picture cs-picture3">
-                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e">
-                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1472099645785-5658abf4ff4e" alt="Разработчик" width="305" height="467">
-                    </picture>
-                </div>
-                <div class="cs-row">
-                    <picture class="cs-picture cs-picture2">
-                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a">
-                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1560250097-0b93528c311a" alt="Разработчик" width="305" height="615">
-                    </picture>
-                    <picture class="cs-picture cs-picture4">
-                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7">
-                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7">
-                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpegphoto-1519085360753-af0119f7cbe7" alt="Разработчик" width="305" height="277">
-                    </picture>
-                </div>
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="/assets/images/faq.svg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/faq.svg">
+                    <img loading="lazy" decoding="async" src="/assets/images/faq.svg" alt="FAQ illustration" width="400" height="400">
+                </picture>
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Частые вопросы</span>

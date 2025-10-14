@@ -18,7 +18,7 @@ eleventyNavigation:
     <!--                    Hero                      -->
     <!-- ============================================ -->
 
-    <section id="hero-1621">
+    <section id="hero-1621" style="min-height: 100svh;">
         <div class="cs-container">
             <div class="cs-content">
                 <h1 class="cs-title">
@@ -34,91 +34,11 @@ eleventyNavigation:
         </div>
 
         <!-- Background Image -->
-        <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg">
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg" alt="Профессиональная команда разработчиков" width="1920" height="1200" aria-hidden="true">
+        <picture class="cs-background" style="height: 100%;">
+            <source media="(max-width: 600px)" srcset="/assets/images/logo.png">
+            <source media="(min-width: 601px)" srcset="/assets/images/logo.png">
+            <img loading="lazy" decoding="async" src="/assets/images/logo.png" alt="WebFreeGuys Logo" width="1920" height="1200" aria-hidden="true">
         </picture>
     </section>
 
-    <!-- ============================================ -->
-    <!--                 Contact Info                 -->
-    <!-- ============================================ -->
-
-    <section id="contact-info">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Нужна помощь?</span>
-                <h2 class="cs-title">Свяжитесь с нами напрямую</h2>
-                <p class="cs-text">
-                    Если у вас есть срочные вопросы или вы хотите ускорить процесс, можете связаться с нами напрямую.
-                </p>
-            </div>
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="/assets/images/phone.svg" alt="phone icon" class="cs-icon" width="48" height="48" decoding="async">
-                    </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">Телефон</span>
-                        <a href="tel:+7-999-123-45-67" class="cs-link">+7 (999) 123-45-67</a>
-                        <p class="cs-item-text">Звоните в рабочее время</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="/assets/images/telegram.svg" alt="telegram icon" class="cs-icon" width="48" height="48" decoding="async">
-                    </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">Telegram</span>
-                        <a href="https://t.me/webfreeguys" class="cs-link" target="_blank">@webfreeguys</a>
-                        <p class="cs-item-text">Быстрые ответы в любое время</p>
-                    </div>
-                </li>
-                <li class="cs-item">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="/assets/images/whatsapp.svg" alt="whatsapp icon" class="cs-icon" width="48" height="48" decoding="async">
-                    </picture>
-                    <div class="cs-flex-group">
-                        <span class="cs-header">WhatsApp</span>
-                        <a href="https://wa.me/79991234567" class="cs-link" target="_blank">+7 (999) 123-45-67</a>
-                        <p class="cs-item-text">Удобное общение</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                   Stats                      -->
-    <!-- ============================================ -->
-
-    <section id="stats-1575">
-        <div class="cs-container">
-            <ul class="cs-card-group">
-                <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="/assets/images/rocket.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
-                    <span class="cs-number">50+</span>
-                    <span class="cs-desc">Сайтов создано бесплатно</span>
-                </li>
-                <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="/assets/images/no-money.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
-                    <span class="cs-number">₽0</span>
-                    <span class="cs-desc">Стоимость создания сайта</span>
-                </li>
-                <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="/assets/images/quality.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
-                    <span class="cs-number">24/7</span>
-                    <span class="cs-desc">Поддержка клиентов</span>
-                </li>
-            </ul>
-        </div>
-        <picture class="cs-background">
-            <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="/assets/images/waves-side.svg">
-            <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="/assets/images/waves-side.svg">
-            <img loading="lazy" decoding="async" src="/assets/images/waves-side.svg" alt="wave" width="1280" height="568">
-        </picture>
-    </section>
 {% endblock %}

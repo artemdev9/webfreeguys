@@ -770,7 +770,7 @@
         /* prevents padding from adding to the width */
         box-sizing: border-box;
         padding: 0 3rem;
-        color: #1a1a1a;
+        color: #fff;
         background-color: var(--primary);
         border-radius: 1.875rem;
         display: inline-block;
