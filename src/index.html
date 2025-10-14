@@ -41,7 +41,7 @@ eleventyNavigation:
                     Запускаем программу поддержки малого и среднего бизнеса.
                     Создаём современные, быстрые и надёжные сайты, которые помогают привлекать клиентов и повышают доверие к вашему бренду.
                 </p>
-                <a href="#form" class="cs-button-solid">Оставить заявку</a>
+                <a href="#apply" class="cs-button-solid">Оставить заявку</a>
                 <p class="cs-text" style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
                     Рассмотрим заявку в течение 24 часов
                 </p>
@@ -98,7 +98,7 @@ eleventyNavigation:
                     Вот почему мы создаём сайты, которые помогают компаниям продавать, а не просто "быть онлайн".
                     Скорость, дизайн, SEO и мобильная оптимизация — всё, чтобы ваш бизнес выглядел профессионально и вызывал доверие с первого взгляда.
                 </p>
-                <a href="#form" class="cs-button-solid">Подать заявку</a>
+                <a href="#apply" class="cs-button-solid">Подать заявку</a>
             </div>
             <div class="cs-image-group">
                 <!--Large Image-->
@@ -283,7 +283,7 @@ eleventyNavigation:
                 <p class="cs-text">Не технически подкованы? Никогда раньше не создавали сайт? Не волнуйтесь. Мы проведём вас через весь процесс пошагово с видео и чёткими инструкциями, пока мы вместе создаём сайт вашей мечты.</p>
                 <p class="cs-text">Мы работали со всеми — от технически подкованных 25-летних основателей стартапов до пожилых владельцев бизнеса, которым нужна дополнительная поддержка.</p>
                 <p class="cs-text">Более 95% людей, для которых мы создали сайты, остались довольны результатами, и около 18% впоследствии нанимают нас для дополнительных платных проектов или рекомендуют друзей, которые это делают.</p>
-                <a class="cs-button-solid" aria-label="learn more about our programs" href="#form">Подать заявку</a>
+                <a class="cs-button-solid" aria-label="learn more about our programs" href="#apply">Подать заявку</a>
             </div>
         </div>
     </section> -->
@@ -598,7 +598,7 @@ eleventyNavigation:
                 </ul>
             </div>
             <!--Form-->
-            <form class="cs-form" name="Contact Form" method="post" novalidate >
+            <form id="apply" class="cs-form" name="Contact Form" method="post" novalidate >
                 <h3 class="cs-h3">Подать заявку</h3>
                 <div id="form-message" class="cs-form-message" style="display: none;"></div>
                 
@@ -679,7 +679,7 @@ eleventyNavigation:
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('#form form');
+            const form = document.getElementById('apply');
             const submitButton = form.querySelector('.cs-submit');
             const messageDiv = document.getElementById('form-message');
             

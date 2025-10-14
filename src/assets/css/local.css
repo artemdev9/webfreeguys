@@ -39,6 +39,16 @@
   opacity: 0.8;
 }
 
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure form section is properly positioned */
+#apply {
+  scroll-margin-top: 2rem;
+}
+
 /* Mobile Menu Layout */
 @media only screen and (max-width: 63.9375rem) {
   #cs-navigation .cs-top-container {
