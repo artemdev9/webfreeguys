@@ -66,6 +66,65 @@
         <noscript><div><img src="https://mc.yandex.ru/watch/104622942" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
         <!-- /Yandex.Metrika counter -->
 
+        <!-- Yandex.Metrika Goal Tracking -->
+        <script type="text/javascript">
+            // Track scroll 75% (one time only)
+            (function trackScroll75(){
+                var fired = false;
+                function check(){
+                    var st = window.pageYOffset || document.documentElement.scrollTop;
+                    var dh = Math.max(
+                        document.body.scrollHeight, document.documentElement.scrollHeight,
+                        document.body.offsetHeight, document.documentElement.offsetHeight,
+                        document.body.clientHeight, document.documentElement.clientHeight
+                    );
+                    var wh = window.innerHeight || document.documentElement.clientHeight;
+                    if(!fired && (st + wh) / dh >= 0.75){
+                        fired = true;
+                        try{ ym(104622942, 'reachGoal', 'scroll_75'); }catch(e){}
+                        window.removeEventListener('scroll', onScroll);
+                    }
+                }
+                function onScroll(){
+                    if(onScroll._t) return;
+                    onScroll._t = setTimeout(function(){ onScroll._t=null; check(); }, 200);
+                }
+                window.addEventListener('scroll', onScroll);
+                check();
+            })();
+
+            // Track contact link clicks
+            document.addEventListener('DOMContentLoaded', function() {
+                // Track phone clicks
+                document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        try{ ym(104622942, 'reachGoal', 'click_phone'); }catch(e){}
+                    });
+                });
+
+                // Track Telegram clicks
+                document.querySelectorAll('a[href*="t.me"], a[href*="telegram"]').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        try{ ym(104622942, 'reachGoal', 'click_tg'); }catch(e){}
+                    });
+                });
+
+                // Track WhatsApp clicks
+                document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        try{ ym(104622942, 'reachGoal', 'click_whatsapp'); }catch(e){}
+                    });
+                });
+
+                // Track form submissions
+                document.querySelectorAll('form').forEach(function(form) {
+                    form.addEventListener('submit', function() {
+                        try{ ym(104622942, 'reachGoal', 'form_submit'); }catch(e){}
+                    });
+                });
+            });
+        </script>
+
         <!-- Use a head block in any layout extending from base.html to include page-specific <head> tags. It will be included here -->
         {# CS-TODO: Contrary to the Intermediate Kit, all preloads will need to be done manually from the pages head block. This is so responsive preloads can be achieved when using the optimization branch #}
         {# https://web.dev/articles/preload-responsive-images #}
