@@ -467,17 +467,17 @@ eleventyNavigation:
         <div class="cs-container">
             <ul class="cs-card-group">
                 <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/thumbs-up.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
-                    <span class="cs-number">30,000+</span>
+                    <img class="cs-icon" aria-hidden="true" src="/assets/images/rocket.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
+                    <span class="cs-number">50+</span>
                     <span class="cs-desc">Сайтов создано бесплатно</span>
                 </li>
                 <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/box.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
+                    <img class="cs-icon" aria-hidden="true" src="/assets/images/no-money.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
                     <span class="cs-number">₽0</span>
                     <span class="cs-desc">Стоимость создания сайта</span>
                 </li>
                 <li class="cs-item">
-                    <img class="cs-icon" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/hand.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
+                    <img class="cs-icon" aria-hidden="true" src="/assets/images/quality.svg" loading="lazy" decoding="async" alt="icon" width="48" height="48">
                     <span class="cs-number">24/7</span>
                     <span class="cs-desc">Поддержка клиентов</span>
                 </li>
@@ -485,10 +485,10 @@ eleventyNavigation:
         </div>
         <picture class="cs-background">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/waves-side.svg">
+            <source media="(max-width: 600px)" srcset="/assets/images/waves-side.svg">
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/waves-side.svg">
-            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/waves-side.svg" alt="wave" width="1280" height="568">
+            <source media="(min-width: 601px)" srcset="/assets/images/waves-side.svg">
+            <img loading="lazy" decoding="async" src="/assets/images/waves-side.svg" alt="wave" width="1280" height="568">
         </picture>
     </section>
 
@@ -635,22 +635,77 @@ eleventyNavigation:
             <!--Form-->
             <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post">
                 <h3 class="cs-h3">Подать заявку</h3>
+                
                 <label class="cs-label">
-                    Имя
-                    <input class="cs-input" required type="text" id="name-1388" name="name" placeholder="Ваше имя">
+                    Ваше имя
+                    <input class="cs-input" required type="text" id="name-1388" name="name">
                 </label>
+                
+                <label class="cs-label">
+                    Название компании / бренда
+                    <input class="cs-input" required type="text" id="company-name-1388" name="company-name">
+                </label>
+                
+                <label class="cs-label">
+                    Сфера деятельности / тип бизнеса
+                    <select class="cs-input" required id="business-type-1388" name="business-type">
+                        <option value="">Выберите тип бизнеса</option>
+                        <option value="cafe">Кафе</option>
+                        <option value="beauty-salon">Салон красоты</option>
+                        <option value="cleaning">Клининг</option>
+                        <option value="tutor">Репетитор</option>
+                        <option value="repair">Ремонт</option>
+                        <option value="lawyer">Юрист</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </label>
+                
+                <label class="cs-label">
+                    Ссылка на соцсети или карту (Instagram / VK / 2GIS / Яндекс Карты)
+                    <input class="cs-input" type="url" id="social-links-1388" name="social-links">
+                </label>
+                
+                <label class="cs-label">
+                    Почему вам нужен сайт?
+                    <textarea class="cs-input cs-textarea" required name="website-purpose" id="website-purpose-1388"></textarea>
+                </label>
+                
+                <label class="cs-label">
+                    Есть ли у вас логотип и контент для сайта?
+                    <select class="cs-input" required id="logo-photos-1388" name="logo-photos">
+                        <option value="">Выберите вариант</option>
+                        <option value="yes">Да</option>
+                        <option value="no">Нет</option>
+                        <option value="in-progress">В процессе</option>
+                    </select>
+                </label>
+                
+                <label class="cs-label cs-phone">
+                    Телефон (WhatsApp/Telegram)
+                    <input class="cs-input" required type="tel" id="phone-1388" name="phone">
+                </label>
+                
                 <label class="cs-label cs-email">
                     Email
-                    <input class="cs-input" required type="email" id="email-1388" name="email" placeholder="your@email.com">
+                    <input class="cs-input" type="email" id="email-1388" name="email">
                 </label>
-                <label class="cs-label cs-phone">
-                    Телефон
-                    <input class="cs-input" required type="tel" id="phone-1388" name="phone" placeholder="+7 (999) 123-45-67">
-                </label>
+                
                 <label class="cs-label">
-                    Опишите ваш бизнес
-                    <textarea class="cs-input cs-textarea" required name="Message" id="message-1388" placeholder="Расскажите о вашем бизнесе и что вы хотели бы видеть на сайте..."></textarea>
+                    Сколько готовы платить за поддержку сайта после пилота?
+                    <select class="cs-input" required id="support-payment-1388" name="support-payment">
+                        <option value="">Выберите вариант</option>
+                        <option value="3500">₽3,500/мес</option>
+                        <option value="free">Только бесплатный вариант</option>
+                    </select>
                 </label>
+                
+            
+                
+                <label class="cs-label cs-checkbox">
+                    <input type="checkbox" required id="data-processing-1388" name="data-processing">
+                    <span class="cs-checkbox-text">Я согласен на обработку персональных данных в соответствии с <a href="/privacy-policy/" target="_blank" class="cs-link">Политикой конфиденциальности</a></span>
+                </label>
+                
                 <button class="cs-button-solid cs-submit" type="submit">Получить бесплатный сайт</button>
             </form>
         </div>

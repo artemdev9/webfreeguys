@@ -51,6 +51,7 @@
 
         <!-- Sitewide Scripts -->
         <script src="/assets/js/nav.js" defer></script>
+        <script src="/assets/js/cookie-consent.js" defer></script>
         
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
@@ -91,5 +92,6 @@
             {% block body %}{% endblock %}
         </main>
         {% include "components/footer.html" %}
+        {% include "components/cookie-banner.html" %}
     </body>
 </html>
