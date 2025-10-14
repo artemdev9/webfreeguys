@@ -91,7 +91,7 @@ export default async function handler(req, res) {
       phone,
       email,
       support_payment: supportPayment,
-      data_processing: dataProcessing === 'true'
+      data_processing: dataProcessing === 'on' // Fixed: checkbox sends 'on', not 'true'
     };
     
     console.log('Data to insert:', JSON.stringify(insertData, null, 2));
