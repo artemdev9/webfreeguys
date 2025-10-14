@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+// In-memory storage for form submissions
+let formSubmissions = [];
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -63,25 +63,8 @@ export default async function handler(req, res) {
       }
     };
 
-    // File path for storing data
-    const dataFilePath = path.join(process.cwd(), 'form-submissions.json');
-    
-    // Read existing data or create empty array
-    let existingData = [];
-    try {
-      if (fs.existsSync(dataFilePath)) {
-        const fileContent = fs.readFileSync(dataFilePath, 'utf8');
-        existingData = JSON.parse(fileContent);
-      }
-    } catch (error) {
-      console.log('Creating new data file...');
-    }
-
-    // Add new submission
-    existingData.push(formSubmission);
-
-    // Save to file
-    fs.writeFileSync(dataFilePath, JSON.stringify(existingData, null, 2));
+    // Add to in-memory storage
+    formSubmissions.push(formSubmission);
 
     // Log to console for immediate visibility
     console.log('=== NEW FORM SUBMISSION ===');
@@ -92,6 +75,7 @@ export default async function handler(req, res) {
     console.log('Phone:', phone);
     console.log('Email:', email || 'Не указано');
     console.log('Business Type:', businessType);
+    console.log('Total Submissions:', formSubmissions.length);
     console.log('========================');
 
     return res.status(200).json({ 
