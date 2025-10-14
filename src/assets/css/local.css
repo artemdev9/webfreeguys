@@ -1319,6 +1319,15 @@
         align-items: flex-start;
         gap: 1.25rem;
     }
+    #form .cs-li-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1.25rem;
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+    }
     #form .cs-li:hover .cs-icon-wrapper {
         transform: scale(1.1);
     }
