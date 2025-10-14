@@ -598,8 +598,9 @@ eleventyNavigation:
                 </ul>
             </div>
             <!--Form-->
-            <form class="cs-form" id="apply" name="Contact Form" method="post">
+            <form class="cs-form" id="apply" name="Contact Form" method="post" novalidate>
                 <h3 class="cs-h3">Подать заявку</h3>
+                <div id="form-message" class="cs-form-message" style="display: none;"></div>
                 
                 <label class="cs-label">
                     Ваше имя
@@ -675,5 +676,162 @@ eleventyNavigation:
             </form>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('apply');
+            const submitButton = form.querySelector('.cs-submit');
+            const messageDiv = document.getElementById('form-message');
+            
+            // Required fields
+            const requiredFields = [
+                'name',
+                'company-name', 
+                'business-type',
+                'website-purpose',
+                'logo-photos',
+                'phone',
+                'support-payment',
+                'data-processing'
+            ];
+            
+            // Add validation styles
+            function addValidationStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    .cs-input.error {
+                        border-color: #ff6b6b !important;
+                        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
+                    }
+                    .cs-form-message {
+                        padding: 1rem;
+                        border-radius: 0.5rem;
+                        margin-bottom: 1rem;
+                        font-weight: 500;
+                    }
+                    .cs-form-message.success {
+                        background-color: #d4edda;
+                        color: #155724;
+                        border: 1px solid #c3e6cb;
+                    }
+                    .cs-form-message.error {
+                        background-color: #f8d7da;
+                        color: #721c24;
+                        border: 1px solid #f5c6cb;
+                    }
+                    .cs-submit:disabled {
+                        opacity: 0.6;
+                        cursor: not-allowed;
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Validate single field
+            function validateField(field) {
+                const value = field.value.trim();
+                const isRequired = requiredFields.includes(field.name);
+                
+                if (isRequired && !value) {
+                    field.classList.add('error');
+                    return false;
+                } else {
+                    field.classList.remove('error');
+                    return true;
+                }
+            }
+            
+            // Validate all fields
+            function validateForm() {
+                let isValid = true;
+                const fields = form.querySelectorAll('input, select, textarea');
+                
+                fields.forEach(field => {
+                    if (!validateField(field)) {
+                        isValid = false;
+                    }
+                });
+                
+                return isValid;
+            }
+            
+            // Show message
+            function showMessage(text, type) {
+                messageDiv.textContent = text;
+                messageDiv.className = `cs-form-message ${type}`;
+                messageDiv.style.display = 'block';
+                
+                // Scroll to message
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            // Hide message
+            function hideMessage() {
+                messageDiv.style.display = 'none';
+            }
+            
+            // Real-time validation
+            form.addEventListener('input', function(e) {
+                if (e.target.matches('input, select, textarea')) {
+                    validateField(e.target);
+                    hideMessage();
+                }
+            });
+            
+            // Form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (!validateForm()) {
+                    showMessage('Пожалуйста, заполните все обязательные поля', 'error');
+                    return;
+                }
+                
+                // Disable submit button
+                submitButton.disabled = true;
+                submitButton.textContent = 'Отправляем...';
+                
+                try {
+                    // Prepare form data
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    // Submit to API
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok) {
+                        showMessage(result.message || 'Заявка успешно отправлена!', 'success');
+                        form.reset();
+                        // Remove error styles
+                        form.querySelectorAll('.cs-input.error').forEach(field => {
+                            field.classList.remove('error');
+                        });
+                    } else {
+                        showMessage(result.message || 'Произошла ошибка при отправке заявки', 'error');
+                    }
+                    
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    showMessage('Произошла ошибка при отправке заявки. Попробуйте еще раз.', 'error');
+                } finally {
+                    // Re-enable submit button
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Получить бесплатный сайт';
+                }
+            });
+            
+            // Initialize
+            addValidationStyles();
+        });
+    </script>
 
 {% endblock %}
