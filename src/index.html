@@ -628,7 +628,7 @@ eleventyNavigation:
                 
                 <label class="cs-label">
                     Ссылка на соцсети или карту (Instagram / VK / 2GIS / Яндекс Карты)
-                    <input class="cs-input" type="url" id="social-links-1388" name="social-links">
+                    <input class="cs-input" required type="url" id="social-links-1388" name="social-links">
                 </label>
                 
                 <label class="cs-label">
@@ -653,7 +653,7 @@ eleventyNavigation:
                 
                 <label class="cs-label cs-email">
                     Email
-                    <input class="cs-input" type="email" id="email-1388" name="email">
+                    <input class="cs-input" required type="email" id="email-1388" name="email">
                 </label>
                 
                 <label class="cs-label">
@@ -683,14 +683,16 @@ eleventyNavigation:
             const submitButton = form.querySelector('.cs-submit');
             const messageDiv = document.getElementById('form-message');
             
-            // Required fields
+            // Required fields - ALL fields are now required
             const requiredFields = [
                 'name',
                 'company-name', 
                 'business-type',
+                'social-links',
                 'website-purpose',
                 'logo-photos',
                 'phone',
+                'email',
                 'support-payment',
                 'data-processing'
             ];

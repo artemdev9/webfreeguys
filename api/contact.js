@@ -21,14 +21,16 @@ export default async function handler(req, res) {
       'data-processing': dataProcessing
     } = req.body;
 
-    // Validate required fields
+    // Validate required fields - ALL fields are now required
     const requiredFields = {
       name,
       companyName,
       businessType,
+      socialLinks,
       websitePurpose,
       logoPhotos,
       phone,
+      email,
       supportPayment,
       dataProcessing
     };
@@ -72,9 +74,14 @@ export default async function handler(req, res) {
     console.log('Date:', formSubmission.date);
     console.log('Name:', name);
     console.log('Company:', companyName);
-    console.log('Phone:', phone);
-    console.log('Email:', email || 'Не указано');
     console.log('Business Type:', businessType);
+    console.log('Social Links:', socialLinks);
+    console.log('Website Purpose:', websitePurpose);
+    console.log('Logo/Content:', logoPhotos);
+    console.log('Phone:', phone);
+    console.log('Email:', email);
+    console.log('Support Payment:', supportPayment);
+    console.log('Data Processing:', dataProcessing);
     console.log('Total Submissions:', formSubmissions.length);
     console.log('========================');
 
