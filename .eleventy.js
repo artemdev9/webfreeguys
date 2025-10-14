@@ -18,6 +18,26 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(pluginEleventyNavigation);
 
     /**
+     *  FILTERS
+     *      Custom filters for processing content
+     */
+    eleventyConfig.addFilter("js", function(content) {
+        return content;
+    });
+
+    /**
+     *  TRANSFORMS
+     *      Process content after templates are rendered
+     */
+    eleventyConfig.addTransform("fix-js", function(content, outputPath) {
+        if (outputPath && outputPath.endsWith(".html")) {
+            // Don't process JavaScript in script tags
+            return content;
+        }
+        return content;
+    });
+
+    /**
      *  PASSTHROUGH'S
      *      Copy/paste non-template files straight to /public, without any interference from the eleventy engine
      *      https://www.11ty.dev/docs/copy/
@@ -38,5 +58,10 @@ module.exports = function (eleventyConfig) {
             data: "_data",
         },
         htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
+        dataTemplateEngine: "njk",
+        jsTemplateEngine: false,
+        templateFormats: ["html", "njk", "md", "11ty.js"],
+        passthroughFileCopy: true,
     };
 };
