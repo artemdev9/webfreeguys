@@ -1,5 +1,9 @@
-// In-memory storage for form submissions
-let formSubmissions = [];
+import { createClient } from '@supabase/supabase-js'
+
+// Initialize Supabase client
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
 
 export default async function handler(req, res) {
   // Only allow POST requests
@@ -46,49 +50,48 @@ export default async function handler(req, res) {
       });
     }
 
-    // Create form submission object
-    const formSubmission = {
-      id: Date.now() + Math.random().toString(36).substr(2, 9), // Unique ID
-      timestamp: new Date().toISOString(),
-      date: new Date().toLocaleString('ru-RU'),
-      data: {
-        name,
-        companyName,
-        businessType,
-        socialLinks: socialLinks || 'Не указано',
-        websitePurpose,
-        logoPhotos,
-        phone,
-        email: email || 'Не указано',
-        supportPayment,
-        dataProcessing
-      }
-    };
+    // Insert data into Supabase
+    const { data, error } = await supabase
+      .from('form_submissions')
+      .insert([
+        {
+          name,
+          company_name: companyName,
+          business_type: businessType,
+          social_links: socialLinks,
+          website_purpose: websitePurpose,
+          logo_photos: logoPhotos,
+          phone,
+          email,
+          support_payment: supportPayment,
+          data_processing: dataProcessing === 'true'
+        }
+      ])
+      .select();
 
-    // Add to in-memory storage
-    formSubmissions.push(formSubmission);
+    if (error) {
+      console.error('Supabase error:', error);
+      return res.status(500).json({ 
+        error: 'Database error',
+        message: 'Произошла ошибка при сохранении заявки. Попробуйте еще раз.' 
+      });
+    }
 
-    // Log to console for immediate visibility
+    // Log successful submission
     console.log('=== NEW FORM SUBMISSION ===');
-    console.log('ID:', formSubmission.id);
-    console.log('Date:', formSubmission.date);
+    console.log('Supabase ID:', data[0].id);
+    console.log('Date:', new Date().toLocaleString('ru-RU'));
     console.log('Name:', name);
     console.log('Company:', companyName);
     console.log('Business Type:', businessType);
-    console.log('Social Links:', socialLinks);
-    console.log('Website Purpose:', websitePurpose);
-    console.log('Logo/Content:', logoPhotos);
-    console.log('Phone:', phone);
     console.log('Email:', email);
-    console.log('Support Payment:', supportPayment);
-    console.log('Data Processing:', dataProcessing);
-    console.log('Total Submissions:', formSubmissions.length);
+    console.log('Phone:', phone);
     console.log('========================');
 
     return res.status(200).json({ 
       success: true, 
       message: 'Заявка успешно сохранена!',
-      submissionId: formSubmission.id
+      submissionId: data[0].id
     });
 
   } catch (error) {
