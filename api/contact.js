@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -41,46 +44,67 @@ export default async function handler(req, res) {
       });
     }
 
-    // Email content
-    const emailContent = `
-Новая заявка с сайта:
+    // Create form submission object
+    const formSubmission = {
+      id: Date.now() + Math.random().toString(36).substr(2, 9), // Unique ID
+      timestamp: new Date().toISOString(),
+      date: new Date().toLocaleString('ru-RU'),
+      data: {
+        name,
+        companyName,
+        businessType,
+        socialLinks: socialLinks || 'Не указано',
+        websitePurpose,
+        logoPhotos,
+        phone,
+        email: email || 'Не указано',
+        supportPayment,
+        dataProcessing
+      }
+    };
 
-Имя: ${name}
-Компания/Бренд: ${companyName}
-Сфера деятельности: ${businessType}
-Соцсети/Карты: ${socialLinks || 'Не указано'}
-Цель сайта: ${websitePurpose}
-Логотип и контент: ${logoPhotos}
-Телефон: ${phone}
-Email: ${email || 'Не указано'}
-Готовность платить за поддержку: ${supportPayment}
-Согласие на обработку данных: ${dataProcessing}
+    // File path for storing data
+    const dataFilePath = path.join(process.cwd(), 'form-submissions.json');
+    
+    // Read existing data or create empty array
+    let existingData = [];
+    try {
+      if (fs.existsSync(dataFilePath)) {
+        const fileContent = fs.readFileSync(dataFilePath, 'utf8');
+        existingData = JSON.parse(fileContent);
+      }
+    } catch (error) {
+      console.log('Creating new data file...');
+    }
 
-Дата отправки: ${new Date().toLocaleString('ru-RU')}
-    `;
+    // Add new submission
+    existingData.push(formSubmission);
 
-    // Send email using Nodemailer (you'll need to install nodemailer)
-    // For now, we'll just log the content and return success
-    console.log('Form submission received:', emailContent);
+    // Save to file
+    fs.writeFileSync(dataFilePath, JSON.stringify(existingData, null, 2));
 
-    // TODO: Replace with actual email sending logic
-    // You can use services like:
-    // - Nodemailer with Gmail/SMTP
-    // - SendGrid
-    // - Mailgun
-    // - Resend
-    // - EmailJS (client-side)
+    // Log to console for immediate visibility
+    console.log('=== NEW FORM SUBMISSION ===');
+    console.log('ID:', formSubmission.id);
+    console.log('Date:', formSubmission.date);
+    console.log('Name:', name);
+    console.log('Company:', companyName);
+    console.log('Phone:', phone);
+    console.log('Email:', email || 'Не указано');
+    console.log('Business Type:', businessType);
+    console.log('========================');
 
     return res.status(200).json({ 
       success: true, 
-      message: 'Заявка успешно отправлена!' 
+      message: 'Заявка успешно сохранена!',
+      submissionId: formSubmission.id
     });
 
   } catch (error) {
     console.error('Form submission error:', error);
     return res.status(500).json({ 
       error: 'Internal server error',
-      message: 'Произошла ошибка при отправке заявки. Попробуйте еще раз.' 
+      message: 'Произошла ошибка при сохранении заявки. Попробуйте еще раз.' 
     });
   }
 }
