@@ -39,6 +39,32 @@
   opacity: 0.8;
 }
 
+/* Mobile Menu Layout */
+@media only screen and (max-width: 63.9375rem) {
+  #cs-navigation .cs-top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #cs-navigation .cs-contact-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  #cs-navigation .cs-contact-link {
+    display: none;
+  }
+  
+  #cs-navigation .cs-button-solid {
+    display: inline-block;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    line-height: 1.2;
+  }
+}
+
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
