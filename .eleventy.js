@@ -28,6 +28,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets/images");
     eleventyConfig.addPassthroughCopy("./src/assets/js");
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
+    eleventyConfig.addPassthroughCopy("./src/yandex_b8d7fd00403c5fa7.html");
 
     return {
         dir: {
