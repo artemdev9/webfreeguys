@@ -1,6 +1,45 @@
 /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
+
+/* Gradient Animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#hero-1621 .gradient-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+#hero-1621 .gradient {
+  --size: 600px;
+  --speed: 50s;
+  --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+  width: var(--size);
+  height: var(--size);
+  filter: blur(calc(var(--size) / 5));
+  background: linear-gradient(45deg, var(--primary), var(--primaryLight), var(--secondary), var(--primary));
+  animation: rotate var(--speed) var(--easing) alternate infinite;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  opacity: 0.8;
+}
+
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #hero-1621 {
@@ -12,6 +51,8 @@
         z-index: 1;
         /* prevents the topper line from causing an overflow */
         overflow: hidden;
+        background-color: #1a1a1a;
+        min-height: 100vh;
     }
     #hero-1621 .cs-container {
         width: 100%;
@@ -214,46 +255,11 @@
         padding: 0;
         color: var(--bodyTextColor);
     }
-    #hero-1621 .cs-background {
-        width: 100%;
-        height: 55%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
-    }
-    #hero-1621 .cs-background:before {
-        /* Overlay */
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #111926;
-        opacity: 0.8;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        /* prevents the cursor from interacting with it */
-        pointer-events: none;
-    }
-    #hero-1621 .cs-background img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #hero-1621 .cs-item {
         grid-column: span 6;
-    }
-    #hero-1621 .cs-background {
-        height: 70%;
     }
 }
 /* Large Desktop - 1300px */
@@ -261,22 +267,9 @@
     #hero-1621 .cs-item {
         grid-column: span 3;
     }
-    #hero-1621 .cs-background {
-        height: 80%;
-    }
 }
 /* Large Desktop - Parallax Effect - 1600px */
 @media only screen and (min-width: 100rem) {
-    #hero-1621 .cs-background {
-        background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    #hero-1621 .cs-background img {
-        display: none;
-    }
 }
 @media only screen and (min-width: 0rem) {
  #hero-1621 .cs-item {
@@ -289,9 +282,6 @@
     }
  #hero-1621 .cs-item-text {
         opacity: 0.8;
-    }
- #hero-1621 .cs-background:before {
-        opacity: 0.9;
     }
 }
 
@@ -511,46 +501,11 @@
         padding: 0;
         color: var(--bodyTextColor);
     }
-    #hero-1621 .cs-background {
-        width: 100%;
-        height: 55%;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -2;
-    }
-    #hero-1621 .cs-background:before {
-        /* Overlay */
-        content: "";
-        width: 100%;
-        height: 100%;
-        background: #111926;
-        opacity: 0.8;
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        /* prevents the cursor from interacting with it */
-        pointer-events: none;
-    }
-    #hero-1621 .cs-background img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #hero-1621 .cs-item {
         grid-column: span 6;
-    }
-    #hero-1621 .cs-background {
-        height: 70%;
     }
 }
 /* Large Desktop - 1300px */
@@ -558,22 +513,9 @@
     #hero-1621 .cs-item {
         grid-column: span 3;
     }
-    #hero-1621 .cs-background {
-        height: 80%;
-    }
 }
 /* Large Desktop - Parallax Effect - 1600px */
 @media only screen and (min-width: 100rem) {
-    #hero-1621 .cs-background {
-        background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting-2.jpeg");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }
-    #hero-1621 .cs-background img {
-        display: none;
-    }
 }
 @media only screen and (min-width: 0rem) {
  #hero-1621 .cs-item {
@@ -586,9 +528,6 @@
     }
  #hero-1621 .cs-item-text {
         opacity: 0.8;
-    }
- #hero-1621 .cs-background:before {
-        opacity: 0.9;
     }
 }
 /*-- -------------------------- -->
