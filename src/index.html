@@ -705,6 +705,13 @@ eleventyNavigation:
                         border-color: #ff6b6b !important;
                         box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.2) !important;
                     }
+                    .cs-checkbox.error {
+                        outline: 2px solid #ff6b6b !important;
+                        outline-offset: 2px;
+                    }
+                    .cs-checkbox.error + .cs-checkbox-text {
+                        color: #ff6b6b !important;
+                    }
                     .cs-form-message {
                         padding: 1rem;
                         border-radius: 0.5rem;
@@ -731,12 +738,29 @@ eleventyNavigation:
             
             // Validate single field
             function validateField(field) {
-                const value = field.value.trim();
                 const isRequired = requiredFields.includes(field.name);
                 
-                if (isRequired && !value) {
-                    field.classList.add('error');
-                    return false;
+                if (isRequired) {
+                    // Special handling for checkboxes
+                    if (field.type === 'checkbox') {
+                        if (!field.checked) {
+                            field.classList.add('error');
+                            return false;
+                        } else {
+                            field.classList.remove('error');
+                            return true;
+                        }
+                    } else {
+                        // Regular input/select/textarea validation
+                        const value = field.value.trim();
+                        if (!value) {
+                            field.classList.add('error');
+                            return false;
+                        } else {
+                            field.classList.remove('error');
+                            return true;
+                        }
+                    }
                 } else {
                     field.classList.remove('error');
                     return true;
@@ -786,7 +810,13 @@ eleventyNavigation:
                 
                 // Validate form
                 if (!validateForm()) {
-                    showMessage('Пожалуйста, заполните все обязательные поля', 'error');
+                    // Check if privacy policy checkbox is not checked
+                    const privacyCheckbox = form.querySelector('input[name="data-processing"]');
+                    if (privacyCheckbox && !privacyCheckbox.checked) {
+                        showMessage('Пожалуйста, согласитесь на обработку персональных данных', 'error');
+                    } else {
+                        showMessage('Пожалуйста, заполните все обязательные поля', 'error');
+                    }
                     return;
                 }
                 
