@@ -106,15 +106,12 @@
         });
     }
     
-    // Form tracking
+    // Form tracking - REMOVED automatic goal firing
+    // Goals will now be fired only after successful Supabase submission
     function setupFormTracking() {
-        var forms = document.querySelectorAll('form');
-        forms.forEach(function(form) {
-            form.addEventListener('submit', function() {
-                console.log('Form submitted - sending goal');
-                sendGoal('form_submit');
-            });
-        });
+        // Form tracking is now handled in the main form submission logic
+        // after successful database insertion
+        console.log('Form tracking setup - goals will fire only on successful submission');
     }
     
     // Send goal to Yandex.Metrika

@@ -847,6 +847,12 @@ eleventyNavigation:
                         form.querySelectorAll('.cs-input.error').forEach(field => {
                             field.classList.remove('error');
                         });
+                        
+                        // Fire Yandex.Metrika goal ONLY after successful Supabase submission
+                        if (typeof sendGoal === 'function') {
+                            console.log('Form submitted successfully - sending goal');
+                            sendGoal('form_submit');
+                        }
                     } else {
                         showMessage(result.message || 'Произошла ошибка при отправке заявки', 'error');
                     }
