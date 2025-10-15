@@ -77,7 +77,7 @@ export default async function handler(req, res) {
     // Check Supabase connection
     console.log('=== SUPABASE CONNECTION CHECK ===');
     console.log('Supabase URL:', process.env.NEXT_PUBLIC_SUPABASE_URL ? 'SET' : 'NOT SET');
-    console.log('Supabase Key:', process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ? 'SET' : 'NOT SET');
+    console.log('Supabase Key:', process.env.SUPABASE_SERVICE_ROLE_KEY ? 'SET' : 'NOT SET');
     
     // Insert data into Supabase
     console.log('=== INSERTING DATA TO SUPABASE ===');
@@ -94,7 +94,7 @@ export default async function handler(req, res) {
       data_processing: dataProcessing === 'on' // Should be boolean
     };
     
-    console.log('Data to insert:', JSON.stringify(insertData, null, 2));
+    console.log('Data prepared for insertion');
     
     const { data, error } = await supabase
       .from('form_submissions')
@@ -117,13 +117,8 @@ export default async function handler(req, res) {
 
     // Log successful submission
     console.log('=== FORM SUBMISSION SUCCESS ===');
-    console.log('Supabase ID:', data[0].id);
+    console.log('Submission ID:', data[0].id);
     console.log('Date:', new Date().toLocaleString('ru-RU'));
-    console.log('Name:', name);
-    console.log('Company:', companyName);
-    console.log('Business Type:', businessType);
-    console.log('Email:', email);
-    console.log('Phone:', phone);
     console.log('========================');
 
     return res.status(200).json({ 

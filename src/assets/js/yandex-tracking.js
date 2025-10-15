@@ -117,27 +117,22 @@
     // Send goal to Yandex.Metrika
     function sendGoal(goalName) {
         try {
-            console.log('Sending goal to Yandex.Metrika:', {
-                counterId: 104622942,
-                goalName: goalName,
-                timestamp: new Date().toISOString()
-            });
+            console.log('Sending goal:', goalName);
             
             ym(104622942, 'reachGoal', goalName);
-            console.log('Goal "' + goalName + '" sent successfully');
+            console.log('Goal sent successfully');
             
             // Also try to send via dataLayer for debugging
             if (typeof dataLayer !== 'undefined') {
                 dataLayer.push({
                     'event': 'yandex_metrika_goal',
-                    'goal_name': goalName,
-                    'counter_id': 104622942
+                    'goal_name': goalName
                 });
                 console.log('Goal also sent via dataLayer');
             }
             
         } catch (e) {
-            console.error('Error sending goal "' + goalName + '":', e);
+            console.error('Error sending goal:', e);
         }
     }
     
