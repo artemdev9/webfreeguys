@@ -124,7 +124,8 @@ export default async function handler(req, res) {
     return res.status(200).json({ 
       success: true, 
       message: 'Заявка успешно сохранена!',
-      submissionId: data[0].id
+      submissionId: data[0].id,
+      supabaseConfirmed: true  // Flag to confirm data reached Supabase
     });
 
   } catch (error) {

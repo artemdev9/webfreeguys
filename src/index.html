@@ -848,10 +848,12 @@ eleventyNavigation:
                             field.classList.remove('error');
                         });
                         
-                        // Fire Yandex.Metrika goal ONLY after successful Supabase submission
-                        if (typeof sendGoal === 'function') {
-                            console.log('Form submitted successfully - sending goal');
+                        // Fire Yandex.Metrika goal ONLY after Supabase confirms data storage
+                        if (result.supabaseConfirmed && typeof sendGoal === 'function') {
+                            console.log('Data confirmed in Supabase - sending goal');
                             sendGoal('form_submit');
+                        } else {
+                            console.log('API success but Supabase not confirmed - goal not fired');
                         }
                     } else {
                         showMessage(result.message || 'Произошла ошибка при отправке заявки', 'error');
