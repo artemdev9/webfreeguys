@@ -136,6 +136,9 @@
         }
     }
     
+    // Make sendGoal available globally
+    window.sendGoal = sendGoal;
+    
     // Start the tracking
     waitForPageLoad();
     
